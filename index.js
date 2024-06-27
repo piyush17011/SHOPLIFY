@@ -3,6 +3,7 @@ const connect = require('./dbConnection');
 const userRoutes = require('./routes/userRoutes');
 const productRoutes = require('./routes/productRoutes');
 const cors = require('cors')
+const PORT = process.env.PORT || 5000
 
 const app = express();  //creates a server
 connect();
@@ -26,7 +27,7 @@ app.use("/api/products",productRoutes);
 //     // res.sendFile(index.html);
 // })
 
-app.listen(5000,()=>{
+app.listen(PORT,()=>{
     console.log("Server is running...")
 });
 
